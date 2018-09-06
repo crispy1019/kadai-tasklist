@@ -1,5 +1,4 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p><div class="row">
+<div class="row">
   <aside class="col-xs-4">
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -12,9 +11,10 @@
   </aside>
   <div class="col-xs-8">
     <ul class="nav nav-tabs nav-justified">
-      <li><a href="#">KadaiTasklist</a></li>
+      <li class="<%= 'active' if current_page?(user_path(@user)) %>"><%= link_to user_path(@user) do %>tasks <span class="badge"><%= @count_tasks %></span><% end %></li>
       <li><a href="#">Followings</a></li>
       <li><a href="#">Followers</a></li>
     </ul>
+    <%= render 'tasks/tasks', tasks: @tasks %>
   </div>
 </div>
