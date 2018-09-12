@@ -9,7 +9,7 @@
           <%= link_to task.user.name, user_path(task.user) %> <span class="text-muted">posted at <%= task.created_at %></span>
         </div>
         <div>
-          <p><%= task.content %></p>
+          <%= link_to task.content, task_path(task) %>
         </div>
         <div>
           <p><%= task.status %></p>
